@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>HMRE (Help to Maintain Routine for the Elderly)</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="index.html">
+                    <img class="img" src="logoF.png" alt="Logo">
+                </a>
+            </div>
+        </header>
+        <main>
+            <form action="login.html">
+                <div class="container">
+                  <h1>Registar</h1>
+                  <p>Por favor preencha para criar a conta.</p>
+                  <hr>
+                  <label for="username"><b>Username</b></label>
+                  <input type="text" placeholder="Inserir Username" name="username" id="username" required
+                  oninvalid="this.setCustomValidity('Insira um username.')" oninput="this.setCustomValidity('')">
+
+                  <label for="email"><b>Email</b></label>
+                  <input type="email" placeholder="Inserir Email" name="email" id="email" required
+                  oninvalid="this.setCustomValidity('Insira um email válido.')" oninput="this.setCustomValidity('')">
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Inserir Password" name="psw" id="psw" onkeyup='check();' required minlength="8"
+                  oninvalid="this.setCustomValidity('Insira uma Password com pelo menos 8 carateres.')" oninput="this.setCustomValidity('')">
+              
+                  <label for="psw-repeat"><b>Repetir Password</b></label>
+                  <input type="password" placeholder="Repetir Password" name="psw-repeat" id="psw-repeat" onkeyup='check();' required>
+                  <span id='message'></span>
+                  <hr>
+                  <div class="container signin">
+                    <p>Já tem conta? <a href="login.html">Login</a></p>
+                  </div>    
+                  <button type="submit" class="registerbtn">Registar</button>
+                </div>
+              </form>          
+        </main>
+        <script>
+            var check = function() {
+            if (document.getElementById('psw').value ==
+              document.getElementById('psw-repeat').value) {
+              document.getElementById('message').style.color = 'green';
+              document.getElementById('message').innerHTML = 'Password correta.';
+            } else {
+              document.getElementById('message').style.color = 'red';
+              document.getElementById('message').innerHTML = 'As Passwords não correspondem.';
+            }
+          }
+        </script>
+    </body>
+</html>
+

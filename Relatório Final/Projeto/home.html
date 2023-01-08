@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style2.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $(".default_option").click(function(){
+              $(this).parent().toggleClass("active");
+            })
+
+            $(".select_ul li").click(function(){
+              var currentele = $(this).html();
+              $(".default_option li").html(currentele);
+              $(this).parents(".select").removeClass("active");
+            })
+          });
+        </script>
+        <script src="https://kit.fontawesome.com/47bc30627b.js" crossorigin="anonymous"></script>
+        <title>HMRE (Home Page)</title>
+    </head>
+    <body>
+      <div class="container">
+          <div class="profile">
+              <div class="top-icons">
+                  <div>
+                    <a href="login.html"><i class="fa-solid fa-right-from-bracket" height="16px">Sair</i></a> 
+                  </div>                  
+                  <div>
+                    <a href="Notifications.html"><i class="fa-solid fa-bell"></i></a>      
+                    <button onclick="openPopup()"><i class="fa-solid fa-gear" ></i></button>
+                    <div class="popup" id="popup">
+                    <div>
+                      <p class="p_popup">Preferências</p>
+                    </div>  
+                    <div class="align_pref">
+                      <div><p class="txtpref">Notificações</p></div>
+                      <label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                    </div>
+                    <div class="align_pref">
+                      <div><p class="txtpref">Modo Escuro</p></div>
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                    <div class="align_pref">
+                      <div><p class="txtpref">Tamanho Texto</p></div>
+                      <div class="wrapper">
+                        <div class="select">
+                          <ul class="default_option">
+                            <li>
+                              <div class="option 1">
+                                <p>16</p>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="select_ul">
+                            <li>
+                              <div class="option one">
+                                <div class="icon"></div>
+                                <p>16</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="option two">
+                                <div class="icon"></div>
+                                <p>18</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="option three">
+                                <div class="icon"></div>
+                                <p>19</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="option four">
+                                <div class="icon"></div>
+                                <p>20</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="option five">
+                                <div class="icon"></div>
+                                <p>22</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="option six">
+                                <div class="icon"></div>
+                                <p>24</p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                      <button onclick="closepopup()" class="btn5">Fechar</button>
+                    </div>
+                  </div>  
+                  </div>
+              </div>
+              <image src="Images/user.png" alt="user icon" class="user-img"></image>
+              <h1>Bem Vindo User!</h1>
+              <div>
+                <a href="agenda.html" class="btn" >Agenda</a>
+              </div>
+              <div>
+                <a href="Forum.html" class="btn" >Forúm</a>
+              </div>
+
+          </div>
+
+      </div>
+      
+      <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+          popup.classList.add("open-popup");  
+        }
+
+        function closepopup(){
+          popup.classList.remove("open-popup");
+        }
+
+      </script>
+    </body>
+
+</html>

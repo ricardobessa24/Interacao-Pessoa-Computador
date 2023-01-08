@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>HMRE (Help to Maintain Routine for the Elderly)</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="index.html">
+                    <img class="img" src="logoF.png" alt="Logo">
+                </a>
+            </div>
+        </header>
+        <main>
+            <form id="form">
+                <div class="container">
+                  <h1>Login</h1>
+                  <hr>
+                  <label for="username"><b>Username</b></label>
+                  <input type="text" placeholder="Inserir Username" name="username" id="username" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Inserir Password" name="psw" id="psw" required>
+              
+                 
+                  <hr>
+                  <div class="container signin">
+                    <a href="index.html">
+                    <p>Esqueceu a Password ?  </p>
+                    </a>
+                  </div>    
+                  <button type="submit" onclick="compareText()" class="registerbtn">Login</button>
+                </div>
+              </form>              
+        </main>
+        <script>
+            function compareText() {
+                var admin = "admin";
+                var Username = document.getElementById("username").value;
+                var Password = document.getElementById("psw").value;
+                
+                if (admin == Username && admin == Password) {
+                    document.getElementById("form").action = "home.html"; 
+                } else {
+                    alert("Inseriu valores errados!");
+                    document.getElementById("form").action = "login.html";
+                }
+            }
+            
+        </script>
+    </body>
+</html>
